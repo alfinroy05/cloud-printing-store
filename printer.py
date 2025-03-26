@@ -2,23 +2,7 @@ import os
 import win32print
 import win32api
 
-def print_file(file_path):
-    """
-    Print the given file using the default printer.
 
-    Args:
-        file_path (str): Path to the file to print.
-    """
-    if not os.path.exists(file_path):
-        print(f"❌ File not found: {file_path}")
-        return
-
-    try:
-        print("🖨️ Sending file to the printer...")
-        win32api.ShellExecute(0, "print", file_path, None, ".", 0)
-        print(f"✅ Printing started: {file_path}")
-    except Exception as e:
-        print(f"❌ Error while printing: {e}")
 
 def get_default_printer():
     """
